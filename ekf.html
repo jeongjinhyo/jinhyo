@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var starbucks = {
+            branch_name : "서울시립대점",
+            owner : "정진효",
+            menu : ["'아메리카노'", "'카페라떼'", "'리치레몬에이드'","'돌체라떼'"],
+            order_process : function (customer_menu) {
+                alert("안녕하세요 손님! \n" + customer_menu + "주문 받았습니다.");
+        }
+    }
+
+    document.write("스타벅스 " + starbucks.branch_name + "<br>주인: " + starbucks.owner);
+
+    i = 0;
+    document.write("<p>메뉴판</p>");
+    while (i < starbucks.menu.length){
+        document.write('<input type = "button" value = "' +starbucks.menu[i]+'" onclick = "starbucks.order_process('+starbucks.menu[i]+')"> <br>');
+        i += 1;
+    }
+    </script> 
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-css</title>
+    <style>
+    body{margin:0px;}
+    h1{margin-bottom:0px;}
+    h4 {border-bottom:1px solid gray;
+        margin:0px;
+        padding:5px;}
+    ol{border-right:1px solid gray;
+        width: 100px;
+        margin:0px;
+        padding:20px;}
+    #grid {display: grid;
+        grid-template-columns: 150px 1fr;}
+    #fooster{border-top: 1px solid gray;
+        text-align:right;
+        padding-right: 10px;}
+    @media (max-width:600px) {
+        #grid{display:block;}
+        ol{border-right:none;
+        border-bottom: 1px solid gray;
+        width:auto;}
+    }
+        
+    </style>
+    <script>
+        function day_night(self){
+            if(self.value === 'night'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            self.value = 'day';
+            var weblist = document.querySelectorAll('li')
+            var i = 0
+
+            while (i<weblist.length) {
+            weblist[i].style.color='skyblue'
+            i=i+1
+            }
+    }
+
+    else {
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        self.value = 'night';
+        var weblist = document.querySelectorAll('li')
+        var i = 0
+        while (i<weblist.length) {
+            weblist[i].style.color='black'
+            i=i+1
+            }
+    }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>웹 개발을 위한 프로그래밍 언어 소개</h1>
+    <h4>시경연과 함께하는 웹 개발 커리큘럼☆</h4>
+    <div id="grid">
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <div>
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript,[10] often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.[11] Over 97% of websites use JavaScript on the client side for web page behavior,[12] often incorporating third-party libraries.[13] All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.
+            </p>
+        </div>
+        </div>
+
+    <div id="fooster">
+        <p>시경연 2x기 이름</p>
+    </div>
+
+    <input class="dn_toggler" type="button" value="night" onclick="day_night(this)">
+
+   
+</body>
+</html>
+
